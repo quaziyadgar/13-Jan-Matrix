@@ -14,7 +14,8 @@ function addInput(){
     var btn = document.createElement("button");
     btn.type = "submit";
     btn.innerHTML = "Submit";
-    btn.onclick = storeArray;
+    // btn.addEventListener('click', storeArray());
+    // btn.onclick = "storeArray();";
     parent.appendChild(newDiv.appendChild(btn));
 }
 
@@ -27,7 +28,7 @@ function storeArray(){
         for(var j = 0; j < length; j++)
         {
             let element = "input" + c++;
-            array[i][j] = document.getElementById(element);
+            array[i][j] = document.getElementById(element).value;
         }
     }
     displayDiagonal();
@@ -35,12 +36,12 @@ function storeArray(){
 function displayDiagonal(){
     var diagonal1 = "";
     var diagonal2 = "";
-    var c = length-1;
+    let c = length-1;
     for(var i = 0; i < length; i++){
         diagonal1 = diagonal1 + array[i][i] + " ";
         diagonal2 = diagonal2 + array[i][c--] + " ";
     }
-    let newdiv2 = document.createElement("div");
-    newdiv2.innerHTML = diagonal1 + "<br/>"+ diagonal2;
-    parent.appendChild(newdiv2);
+    let newDiv2 = document.createElement("div");
+    newDiv2.innerHTML = diagonal1 + "<br/>"+ diagonal2;
+    parent.appendChild(newDiv2);
 }
