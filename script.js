@@ -14,7 +14,8 @@ function addInput(){
     var btn = document.createElement("button");
     btn.type = "submit";
     btn.innerHTML = "Submit";
-    // btn.addEventListener('click', storeArray());
+    // btn.id = "btn";
+    // document.getElementById("btn").addEventListener('click', storeArray());
     // btn.onclick = "storeArray();";
     parent.appendChild(newDiv.appendChild(btn));
 }
