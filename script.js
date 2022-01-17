@@ -15,7 +15,7 @@ function addInput(){
     btn.type = "submit";
     btn.innerHTML = "Submit";
     // btn.id = "btn";
-    // document.getElementById("btn").addEventListener('click', storeArray());
+    // btn.addEventListener('click', storeArray());
     // btn.onclick = "storeArray();";
     parent.appendChild(newDiv.appendChild(btn));
 }
