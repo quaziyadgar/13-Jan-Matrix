@@ -1,8 +1,10 @@
+var length = 0;
+var parent;
 function addInput(){
     // alert("hello");
-    var parent = document.body;
+    parent = document.body;
     const newDiv = document.createElement("div");
-    var length = document.getElementById("length").value;
+    length = document.getElementById("length").value;
         length = parseInt(length);
     for(var i = 1; i <=length*length; i++){
         var inputField = document.createElement("input");
@@ -14,14 +16,15 @@ function addInput(){
     var btn = document.createElement("button");
     btn.type = "submit";
     btn.innerHTML = "Submit";
-    // btn.id = "btn";
-    // btn.addEventListener('click', storeArray());
+    btn.id = "btn";
+    btn.addEventListener('click', storeArray);
     // btn.onclick = "storeArray();";
     parent.appendChild(newDiv.appendChild(btn));
 }
 
+var array = [];
 function storeArray(){
-    var array = new Array(length-1);
+    array = new Array(length-1);
     var c = 1;
     for(var i = 0; i < length; i++)
     {
@@ -32,6 +35,7 @@ function storeArray(){
             array[i][j] = document.getElementById(element).value;
         }
     }
+    console.log(array);
     displayDiagonal();
 }
 function displayDiagonal(){
